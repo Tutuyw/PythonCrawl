@@ -2,8 +2,8 @@ import json
 
 from jsonsearch import JsonSearch
 
-from Crawler.Common.common_request_url import request_url_json
-from Crawler.Twitter_Crawl.Twitter_URL import tu_account
+from Crawler.common_request_url import request_url_json
+from Crawler.Twitter_URL import tu_account
 
 class TwitterClass():
     def __init__(self):
