@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.facebook.com	TRUE	/	TRUE	1711798065	sb	HJ_4Y5hKkCRPhyiQhKXrQUcC
+.facebook.com	TRUE	/	TRUE	1711798056	datr	H5_4Y5z-GMjkoTA6Q2839hKH
+.facebook.com	TRUE	/	TRUE	1711953039	c_user	100090734432056
+.facebook.com	TRUE	/	TRUE	1681021839	dpr	1.25
+.facebook.com	TRUE	/	TRUE	1681021839	wd	2048x1002
+.facebook.com	TRUE	/	TRUE	1711953039	xs	7%3AxOJkyTl6hdM1Gg%3A2%3A1677238062%3A-1%3A-1%3A%3AAcV8ohecrzUzc8lQ3IH4xeeKDt-6DFKIV7bidRgCL80
+.facebook.com	TRUE	/	TRUE	1688193037	fr	0OKFqbZQsLhwZfNdo.AWX4IhwxS84TwHFVM-iHw8mlphw.BkKSEP.he.AAA.0.0.BkKSEP.AWXnzI6KW1c
+.facebook.com	TRUE	/	TRUE	0	presence	C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1680417043933%2C%22v%22%3A1%7D
