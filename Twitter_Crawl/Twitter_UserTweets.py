@@ -1,7 +1,7 @@
 import json
 
-from Common.common_request_url import request_url_json
-from Twitter_Crawl.Twitter_Account import tu_account_info
+from common_request_url import request_url_json
+from Twitter_Account import tu_account_info
 
 def get_UserTweets(userId):
     global variable
