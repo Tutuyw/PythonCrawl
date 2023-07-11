@@ -20,9 +20,11 @@ def TweetDetail(response_data):
     for instruction in instructions:
         if instruction['type'] == 'TimelineAddEntries':
             TimelineAddEntries_entries = instruction['entries']
+
             for TimelineAddEntries_entry in TimelineAddEntries_entries:
                 # tweet代表是该条博文的具体内容
-                if 'tweet' in TimelineAddEntries_entry['entryId']:
+                # if 'tweet' in TimelineAddEntries_entry['entryId']:
+                if TimelineAddEntries_entry['entryId'].startswith('tweet-'):
                     tweet_result = TimelineAddEntries_entry['content']['itemContent']['tweet_results']['result']
                     Tweet_info(tweet_result)
                 # conversationthread代表是该条博文的评论消息
