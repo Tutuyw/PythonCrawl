@@ -1,8 +1,7 @@
 import json
 
-from Common.common_request_url import request_url_json
-from Twitter_Crawl.Twitter_Account import tu_account_info
-from Twitter_Crawl.Twitter_UserTweets import Tweet_info
+from common_request_url import request_url_json
+from Twitter_Account import tu_account_info
 
 
 def get_TweetDetail(TweetId):
@@ -47,7 +46,43 @@ def get_TweetDetail_cursor_bottom(cursor_bottom_value):
     response_data = request_url_json(TweetDetail_url, twitter_header)
     TweetDetail(response_data)
 
-# get_TweetDetail('1653396001145729024')
+def Tweet_info(tweet_result):
+    tweetinfo = {}
+    tweet_id = tweet_result['rest_id']
+    user_domain = tweet_result['core']['user_results']['result']['legacy']['screen_name']
+    tweetinfo['tweet_id'] = tweet_id
+    tweetinfo['tweet_url'] = f'https://twitter.com/{user_domain}/status/{tweet_id}'
+    tweetinfo['created_at'] = tweet_result['legacy']['created_at']
+    tweetinfo['content_text'] = tweet_result['legacy']['full_text']
+    content_picture = ''
+    content_video = ''
+    if 'extended_entities' in tweet_result['legacy'].keys():
+        media = tweet_result['legacy']['extended_entities']['media'][0]
+        if media['type'] == 'photo':
+            content_picture = media['media_url_https']
+        elif media['type'] == 'video':
+            content_video = media['video_info']['variants'][1]['url']
+    tweetinfo['content_picture'] = content_picture
+    tweetinfo['content_video'] = content_video
+
+    tweetinfo['reply_count'] = tweet_result['legacy']['reply_count']
+    tweetinfo['retweet_count'] = tweet_result['legacy']['retweet_count']
+    tweetinfo['quote_count'] = tweet_result['legacy']['quote_count']
+    tweetinfo['favorite_count'] = tweet_result['legacy']['favorite_count']
+    tweetinfo['bookmark_count'] = tweet_result['legacy']['bookmark_count']
+    try:
+        tweetinfo['veiws_count'] = tweet_result['views']['count']
+    except:
+        tweetinfo['veiws_count'] = ''
+
+    tweetinfo['user_id'] = tweet_result['core']['user_results']['result']['rest_id']
+    tweetinfo['user_domain'] = user_domain
+    # tweetinfo['user_domain'] = tweet_result['core']['user_results']['result']['legacy']['screen_name']
+    tweetinfo['user_screen_name'] = tweet_result['core']['user_results']['result']['legacy']['name']
+
+    print(tweetinfo)
+
+get_TweetDetail('1653396001145729024')
 
 
 
